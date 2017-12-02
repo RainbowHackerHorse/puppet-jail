@@ -5,10 +5,6 @@
 #
 class jail::setup () {
 
-  package { 'iocage':
-    ensure => installed,
-  }
-
   service { 'iocage':
     enable => true,
   }
@@ -18,5 +14,4 @@ class jail::setup () {
   }
 
   File['/etc/jail.conf'] ~> Service['iocage']
-  Package['iocage'] ~> Service['iocage']
 }

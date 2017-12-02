@@ -11,6 +11,15 @@ This module expects to be the only jail manager on a given system.  Each system 
 ```Puppet
 include jail::setup
 ```
+This module also supports using either iocage legacy, or py-iocage.
+To use iocage-legacy, use:
+```Puppet
+include jail::legacy
+```
+To use py-iocage, do:
+```Puppet
+include jail::current
+```
 
 This simply installs 'iocage' and removes '/etc/jail.conf'.
 
